@@ -42,10 +42,11 @@ public class EJ02{
 
            String fizz = "FIZZ";
            String buzz = "BUZZ";
-           fizzBuzz(fizz, buzz);
+           int contador = fizzBuzz(fizz, buzz); // Llamada a la función fizzBuzz y almacenamiento del resultado en count
+           System.out.println("El número de veces que se ha impreso un número es: " + contador);
         
     }
-    public static void funcionSinParametrosNiRetorno() {
+    public static void  funcionSinParametrosNiRetorno() {
         System.out.println("Esta es una función sin parámetros ni retorno");
         System.out.println("---------");
     }
@@ -69,7 +70,8 @@ public class EJ02{
 
         System.out.println("---------");
     }
-    public static void fizzBuzz(String fizz, String buzz){
+    public static int fizzBuzz(String fizz, String buzz){
+        int contador = 0;
         for (int i = 0; i <=
          100; i++) {
             if(i % 3 == 0 && i % 5 ==0){
@@ -80,7 +82,9 @@ public class EJ02{
                 System.out.println(buzz);
             }else{
                 System.out.println(i);
+                contador++;
             }
         }
+        return contador;
     }
 }
