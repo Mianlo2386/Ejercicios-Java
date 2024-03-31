@@ -16,6 +16,9 @@
  */
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.HashSet;
 
 public class EJ03 {
     public static void main(String[] args) {
@@ -36,6 +39,26 @@ public class EJ03 {
         
         // Llamar al método para mostrar la lista
         mostrarLista(listaCadenas);
+
+        // Crear un mapa de cadenas y enteros
+        HashMap<String, Integer> mapa = new HashMap<String, Integer>();
+
+        // Agregar elementos al mapa
+        mapa.put("Uno", 1);
+        mapa.put("Dos", 2);
+
+        // Llamar al método para mostrar el mapa
+        mostrarMapa(mapa);
+
+        // Crear un conjunto de enteros
+        HashSet<Integer> conjuntoEnteros = new HashSet<Integer>();
+        
+        // Agregar elementos al conjunto
+        conjuntoEnteros.add(1);
+        conjuntoEnteros.add(2);
+        
+        // Llamar al método para mostrar el conjunto
+        mostrarConjunto(conjuntoEnteros);
     }
 
     // Método para imprimir un arreglo de enteros
@@ -43,7 +66,7 @@ public class EJ03 {
         for (int i = 0; i < arreglo.length; i++) {
             System.out.print(arreglo[i] + " ");
         }
-        System.out.println(); // Salto de línea al final
+        System.out.println("\n" +  "---------------"); 
     }
     // Método para mostrar una lista de cadenas
     public static void mostrarLista(ArrayList<String> lista) {
@@ -51,6 +74,23 @@ public class EJ03 {
         for (String elemento : lista) {
             System.out.println(elemento);
         }
-    }    
+        System.out.println("\n" +  "---------------"); 
+    }   
+    // Método para mostrar un mapa de cadenas y enteros
+    public static void mostrarMapa(HashMap<String, Integer> mapa) {
+        System.out.println("Contenido del mapa:");
+        for (Map.Entry<String, Integer> entry : mapa.entrySet()) {
+            System.out.println("Clave: " + entry.getKey() + ", Valor: " + entry.getValue());
+        }
+        System.out.println("\n" +  "---------------"); 
+    } 
+    // Método para mostrar un conjunto de enteros
+    public static void mostrarConjunto(HashSet<Integer> conjunto) {
+        System.out.println("Contenido del conjunto:");
+        for (Integer elemento : conjunto) {
+            System.out.println(elemento);
+        }
+        System.out.println("\n" +  "---------------"); 
+    }
     }
 
