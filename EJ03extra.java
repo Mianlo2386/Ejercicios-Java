@@ -28,10 +28,10 @@ public class EJ03extra {
                     insertarContacto(agenda, scanner);
                     break;
                 case 3:
-                    // Lógica para actualizar contacto
+                    actualizarContacto(agenda, scanner);
                     break;
                 case 4:
-                    // Lógica para eliminar contacto
+                    eliminarContacto(agenda, scanner);
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
@@ -68,8 +68,9 @@ public class EJ03extra {
     }  
     public static void insertarContacto(Map<String, String> agenda, Scanner scanner) {
         System.out.println("Ingrese el nombre del contacto:");
-        String nombre = scanner.nextLine();
         scanner.nextLine();
+        String nombre = scanner.nextLine();
+        
 
         System.out.println("Ingrese el número de teléfono:");
         String telefono = scanner.nextLine();
@@ -84,15 +85,22 @@ public class EJ03extra {
         } else {
             System.out.println("Número de teléfono no válido. Debe ser numérico y tener la longitud adecuada (10 números).");
         }
+        System.out.println(agenda);
+    }
+
+    public static boolean validarTelefono(String telefono) {
+        //Validar si el número de teléfono es correcto
+        return telefono.matches("\\d{10}");
     }
 
     public static void buscarContactoPorNombre(Map<String, String> agenda, String nombre){
-        String telefono = agenda.get(nombre);
-        if (telefono != null) {
-            System.out.println("El número de teléfono de " + nombre + " es: " + telefono);
-        } else {
-            System.out.println("El contacto '" + nombre + "' no se encuentra en la agenda.");
+        for (Map.Entry<String, String> entry : agenda.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(nombre)) {
+                System.out.println("El número de teléfono de " + nombre + " es: " + entry.getValue());
+                return;
+            }
         }
+        System.out.println("El contacto '" + nombre + "' no se encuentra en la agenda.");
     }
 
     public static void buscarContactoPorTelefono(Map<String, String> agenda, String telefono){
@@ -104,9 +112,40 @@ public class EJ03extra {
         }
         System.out.println("El número de teléfono '" + telefono + "' no se encuentra en la agenda.");
     }
-
-    public static boolean validarTelefono(String telefono) {
-        //Validar si el número de teléfono es correcto
-        return telefono.matches("\\d{10}");
+    
+    public static void actualizarContacto(Map<String, String> agenda, Scanner scanner) {
+        scanner.nextLine(); // Consumimos el salto de línea pendiente
+    
+        System.out.println("Ingrese el nombre del contacto que desea actualizar:");
+        String nombre = scanner.nextLine();
+    
+        if (agenda.containsKey(nombre)) {
+            System.out.println("Ingrese el nuevo número de teléfono para " + nombre + ":");
+            String nuevoTelefono = scanner.nextLine();
+    
+            if (validarTelefono(nuevoTelefono)) {
+                agenda.put(nombre, nuevoTelefono);
+                System.out.println("Contacto actualizado correctamente.");
+            } else {
+                System.out.println("Número de teléfono no válido. Debe ser numérico y tener la longitud adecuada (10 números).");
+            }
+        } else {
+            System.out.println("El contacto '" + nombre + "' no se encuentra en la agenda.");
+        }
     }
+    
+    public static void eliminarContacto(Map<String, String> agenda, Scanner scanner){
+        scanner.nextLine();
+
+        System.out.println("Ingrese el nombre del contacto que desea eliminar:");
+        String nombre = scanner.nextLine();
+
+        if (agenda.containsKey(nombre)){
+            agenda.remove(nombre);
+            System.out.println("Contacto eliminado correctamente.");
+        } else {
+            System.out.println("El contacto '" + nombre + "' no se encuentra en la agenda.");
+        }
+    }
+    
 }
