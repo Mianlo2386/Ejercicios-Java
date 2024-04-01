@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class EJ03 {
     public static void main(String[] args) {
@@ -59,6 +62,27 @@ public class EJ03 {
         
         // Llamar al método para mostrar el conjunto
         mostrarConjunto(conjuntoEnteros);
+
+        //Crear una cola de cadenas
+        Queue<String>colaCadenas = new LinkedList<String>();
+
+        //Agregar elementos a la cola
+
+        colaCadenas.add("Primero");
+        colaCadenas.add("Segundo");
+
+        //Llamar al método para mostrar la cola
+        mostrarCola(colaCadenas);
+
+        //Crear una pila de enteros
+        Stack<Integer> pilaEnteros = new Stack<Integer>();
+
+        //Agregar elementos a la pila
+        pilaEnteros.push(1);
+        pilaEnteros.push(2);
+
+        //Llamar al método para mostrar la pila
+        mostrarPila(pilaEnteros);
     }
 
     // Método para imprimir un arreglo de enteros
@@ -91,6 +115,22 @@ public class EJ03 {
             System.out.println(elemento);
         }
         System.out.println("\n" +  "---------------"); 
+    }
+    //Método para mostrar una cola de cadenas
+    public static void mostrarCola(Queue<String> cola){
+        System.out.println("Contenido de la cola:");
+        for (String elemento: cola){
+            System.out.println(elemento);
+        }
+        System.out.println("\n-------------");
+    }
+    //Método para mostrar una pila de enteros
+    public static void mostrarPila(Stack<Integer> pila) {
+        System.out.println("Contenido de la pila:");
+        while (!pila.isEmpty()) {
+            System.out.println(pila.pop());
+        }
+        System.out.println("\n--------------");
     }
     }
 
