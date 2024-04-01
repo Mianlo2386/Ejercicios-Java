@@ -11,9 +11,9 @@ public class EJ03extra {
         //Creamos el Hashmap para almacenar los contactos
         Map<String, String> agenda = new HashMap<>();
 
-        agenda.put("Danu", "1130502040");
-        agenda.put("Luz", "1122334455");
-        agenda.put("Lila", "1077889900");
+        agenda.put("Daniel", "1130502040");
+        agenda.put("Lucia", "1122334455");
+        agenda.put("Lisandro", "1077889900");
 
         do {
             mostrarMenu();

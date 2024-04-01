@@ -2,6 +2,7 @@
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Stack;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Queue;
 
@@ -28,6 +29,22 @@ public class EJ03bis {
         mostrarArreglo(arreglo);
         System.out.println("----------");
 
+        //Creo segundo arreglo desordenado de tamaño 5
+        int[] arregloDesordenado = {30, 10, 20,50, 40};
+
+        //Mostrar arreglo antes del ordenamiento
+        System.out.println("Arreglo antes del oredenamiento:");
+        mostrarArreglo2(arregloDesordenado);
+        System.out.println("-----------");
+
+        //Ordenar el arreglo
+        Arrays.sort(arregloDesordenado);
+
+        //Mostrar el arreglo ordenado
+        System.out.println("Arreglo después del ordenamiento:");
+        mostrarArreglo2(arregloDesordenado);
+        System.out.println("----------");
+
         //Crear una lista enlazada de enteros
         LinkedList<Integer> listaEnlazada = new LinkedList<Integer>();
 
@@ -40,6 +57,27 @@ public class EJ03bis {
         System.out.println("Lista enlazada antes del borrado:");
         mostrarListaEnlazada(listaEnlazada);
         System.out.println("-----------");
+
+        //Crear una lista enlazada de enteros desordenada
+        LinkedList<Integer> listaEnlazadaDesordenada = new LinkedList<Integer>();
+        listaEnlazadaDesordenada.add(30);
+        listaEnlazadaDesordenada.add(10);
+        listaEnlazadaDesordenada.add(20);
+        listaEnlazadaDesordenada.add(50);
+        listaEnlazadaDesordenada.add(40);
+
+        //Mostrar la lista enlazada antes del ordenamiento
+        System.out.println("Lista enlazada antes del ordenamiento:");
+        mostrarListaEnlazada2(listaEnlazadaDesordenada);
+        System.out.println("----------");
+
+        //Ordenar la lista enlazada
+        listaEnlazadaDesordenada.sort(null);
+
+        //Mostrar la lista enlazada antes del ordenamiento
+        System.out.println("Lista enlazada después del oedenamiento:");
+        mostrarListaEnlazada2(listaEnlazadaDesordenada);
+        System.out.println("----------");
 
         //Borrado: Eliminar el segundo elemento de la lista
         listaEnlazada.remove(1);
@@ -120,12 +158,27 @@ public class EJ03bis {
             System.out.println(arreglo[i] + " ");
         }
     }
+
+    public static void mostrarArreglo2(int[] arregloDesordenado) {
+        for (int i=0; i < arregloDesordenado.length; i++){
+            System.out.println(arregloDesordenado[i] + " ");
+        }
+    }
+
     //Método para mostrar una lista enlazada
     public static void mostrarListaEnlazada(LinkedList<Integer> listaEnlazada) {
         for (Integer elemento : listaEnlazada) {
             System.out.println(elemento);
         }
     }
+
+    //Método para mostrar una lista enlazada
+    public static void mostrarListaEnlazada2(LinkedList<Integer> listaEnlazadaDesordenada) {
+        for (Integer elemento : listaEnlazadaDesordenada) {
+            System.out.println(elemento);
+        }
+    }
+
     //Método para mostrar un mapa
     public static void mostrarMapa(HashMap<String, Integer> mapa) {
         for (Map.Entry<String, Integer> entry : mapa.entrySet()) {
