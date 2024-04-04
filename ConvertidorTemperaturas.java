@@ -9,12 +9,18 @@ public class ConvertidorTemperaturas {
 
         double fahrenheit = (celsius * 1.8) + 32;
 
+        int fahrenheitInt = (int) fahrenheit;
+
+        // Formateando el resultado para mostrar solo un decimal
+        String formattedResult = String.format("%.1f", fahrenheit);
+
         System.out.println("El equivalente en grados Fahrenheit es: ");
         System.out.println(fahrenheit);
 
-        int fahrenheitInt = (int) fahrenheit;
+        System.out.println("El equivalente en grados Fahrenheit con un decimal es: ");
+        System.out.println(formattedResult);
 
         System.out.println("La temperatura sin decimales es:");
-        System.out.println(fahrenheitInt);
+        System.out.println(fahrenheitInt); 
     }
 }
