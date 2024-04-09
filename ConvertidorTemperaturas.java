@@ -22,5 +22,8 @@ public class ConvertidorTemperaturas {
 
         System.out.println("La temperatura sin decimales es:");
         System.out.println(fahrenheitInt); 
+        
+        scanner.close();
     }
+    
 }

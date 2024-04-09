@@ -30,5 +30,6 @@ public class NumeroSecreto {
         if (numeroSecreto != numeroUsuario) {
             System.out.println("Alcanzaste el máximo de intentos. El número secreto era: " + numeroSecreto);
         }
+        teclado.close();
     }
 }

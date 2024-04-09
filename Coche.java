@@ -10,8 +10,9 @@ public class Coche {
          
     }
      
+    
+ 
     public Coche(int numPuertas, String marca, String modelo, int numeroCaballos, int cilindrada, double precio) {
-        super();
         this.numPuertas = numPuertas;
         this.marca = marca;
         this.modelo = modelo;
@@ -19,7 +20,7 @@ public class Coche {
         this.cilindrada = cilindrada;
         this.precio = precio;
     }
- 
+
     public int getNumPuertas() {
         return numPuertas;
     }
